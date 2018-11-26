@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Authorization v-if="show"/>
+    <ToDo />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Authorization from './components/Authorization.vue'
+import ToDo from './components/ToDo.vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Authorization,
+    ToDo,
+  },
+  data () {
+    return {
+      show: false
+    }
   }
 }
 </script>
